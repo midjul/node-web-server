@@ -46,7 +46,12 @@ app.get("/about", (req, res) => {
     pageTitle: "About Page"
   });
 });
-
+app.get("/projects", (req, res) => {
+  res.render("projects.hbs", {
+    pageTitle: "Projects Page",
+    projects: ["First Project", "Second Project", "Third Project"]
+  });
+});
 app.get("/bad", (req, res) => {
   res.json({ error: "Unable to  handle request" });
 });
